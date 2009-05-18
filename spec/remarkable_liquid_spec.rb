@@ -8,6 +8,9 @@ class Company < ActiveRecord::Base
 end
 
 class Company::LiquidDropClass < Liquid::Drop
+  def initialize(object)
+  end
+  
   def name
   end
   

@@ -8,7 +8,7 @@ module Remarkable
         
         def has_liquid_method?
           begin
-            drop = eval("#{@subject.class}::LiquidDropClass.new")
+            drop = eval("#{@subject.class}::LiquidDropClass.new(Object.new)")
             @names.each do |name|
               return false unless drop.respond_to? name
             end

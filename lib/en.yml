@@ -4,4 +4,4 @@ en:
       have_liquid_methods: 
         description: "should have liquid methods"
         expectations: 
-          has_liquid_method: "{{subject_name}} should have {{attribute}} as a liquid method"
+          has_liquid_method: "{{subject_name}} should have {{name}} as liquid method(s)"
