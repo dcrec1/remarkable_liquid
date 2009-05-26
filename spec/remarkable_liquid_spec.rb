@@ -1,28 +1,5 @@
 require File.join(File.dirname(__FILE__), "spec_helper.rb")
-
-require 'liquid'
-
-create_table "companies" do end
-create_table "people" do end
-
-class Company < ActiveRecord::Base
-end
-
-class Company::LiquidDropClass < Liquid::Drop
-  def name
-  end
-  
-  def slogan
-  end
-end
-
-class Person < ActiveRecord::Base
-end
-
-class Person::LiquidDropClass < Liquid::Drop
-  def id
-  end
-end
+require File.join(File.dirname(__FILE__), "env.rb")
 
 describe Remarkable::Liquid do
   describe "have_liquid_methods" do
