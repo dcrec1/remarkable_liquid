@@ -8,9 +8,9 @@ module Remarkable
         
         def has_liquid_method?
           begin
-            drop = eval("#{@subject.class}::LiquidDropClass.new(Object.new)")
+            methods = eval("#{@subject.class}::LiquidDropClass").instance_methods(false)
             @names.each do |name|
-              return false unless drop.respond_to? name
+              return false unless methods.include? name.to_s
             end
           rescue
             false
