@@ -22,5 +22,13 @@ describe Remarkable::Liquid do
     it "should know inherited id method is not a liquid method" do
       have_liquid_methods(:id).matches?(@model).should be_false
     end
+    
+    it "should validate Liquid has a filter registered" do
+      be_a_liquid_filter.matches?(CompanyFilters).should be_true    
+    end
+    
+    it "should validate Liquid doesn't has a filter registered" do
+      be_a_liquid_filter.matches?(PersonFilters).should be_false
+    end
   end
 end

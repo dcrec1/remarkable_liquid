@@ -1,3 +1,7 @@
+def strainer
+  Liquid::Strainer
+end
+
 module Remarkable
   module Liquid
     module Matchers
@@ -21,7 +25,20 @@ module Remarkable
       def have_liquid_methods(*attributes)
         HaveLiquidMethodsMatcher.new(attributes).spec(self)
       end
+      
+      class BeALiquidFilterMatcher < Remarkable::ActiveRecord::Base      
+        assertion :liquid_filter?
+        
+        def liquid_filter?
+          !strainer.filters["#{@subject.to_s}"].nil?
+        end
+      end
 
+      def be_a_liquid_filter
+        BeALiquidFilterMatcher.new.spec(self)
+      end
     end
   end
 end
+
+Liquid::Strainer.class_eval "def self.filters; return @@filters; end"

@@ -16,6 +16,8 @@ ActiveRecord::Base.establish_connection(
 
 require 'remarkable_activerecord'
 
+require 'liquid'
+
 dir = File.dirname(__FILE__)
 require File.join(dir, "..", "lib", "remarkable_liquid")
 

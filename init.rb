@@ -8,5 +8,6 @@ if RAILS_ENV == "test"
   require 'spec/rails'
 
   Remarkable.include_matchers!(Remarkable::Liquid, Spec::Rails::Example::ModelExampleGroup)
+  Remarkable.include_matchers!(Remarkable::Liquid, Spec::Rails::Example::HelperExampleGroup)
 
 end
