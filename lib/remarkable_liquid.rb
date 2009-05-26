@@ -42,3 +42,4 @@ module Remarkable
 end
 
 Liquid::Strainer.class_eval "def self.filters; return @@filters; end"
+Remarkable::Messages.class_eval "def interpolation_options; {:subject => @subject.to_s}; end"

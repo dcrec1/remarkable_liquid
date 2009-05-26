@@ -8,4 +8,4 @@ en:
       be_a_liquid_filter:
         description: "should be a Liquid filter"
         expectations: 
-          liquid_filter: "{{subject_name}} should be registered as a Liquid filter"
+          liquid_filter: "{{subject}} should be registered as a Liquid filter"
