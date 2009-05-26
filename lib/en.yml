@@ -2,6 +2,10 @@ en:
   remarkable:
     liquid: 
       have_liquid_methods: 
-        description: "should have liquid methods"
+        description: "should have Liquid methods"
         expectations: 
-          has_liquid_method: "{{subject_name}} should have {{name}} as liquid method(s)"
+          has_liquid_method: "{{subject_name}} should have {{name}} as Liquid method(s)"
+      be_a_liquid_filter:
+        description: "should be a Liquid filter"
+        expectations: 
+          liquid_filter: "{{subject_name}} should be registered as a Liquid filter"
